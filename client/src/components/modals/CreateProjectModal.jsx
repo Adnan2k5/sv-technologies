@@ -55,9 +55,9 @@ export default function CreateProjectModal({ open, onClose, onSuccess }) {
       }
     >
       <form onSubmit={handleSubmit} className="space-y-4">
-        <Input label="Project Name *" placeholder="e.g. DHA Phase 6 — Villa 23" value={form.name} onChange={set("name")} />
-        <Input label="Client Name" placeholder="e.g. Mr. Aslam Khan" value={form.clientName} onChange={set("clientName")} />
-        <Input label="Location" placeholder="e.g. DHA Phase 6, Lahore" value={form.location} onChange={set("location")} />
+        <Input label="Project Name *" placeholder="e.g. Residential Building" value={form.name} onChange={set("name")} />
+        <Input label="Client Name" placeholder="e.g. Mr. Adnan Ashraf" value={form.clientName} onChange={set("clientName")} />
+        <Input label="Location" placeholder="e.g. Main Road" value={form.location} onChange={set("location")} />
         <Input
           label="Initial Funds (₹)"
           type="number"
