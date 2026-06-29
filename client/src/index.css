@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-secondary text-text-primary;
+    min-height: 100dvh;
+    overscroll-behavior: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-strong rounded-full;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+
+  .card {
+    @apply bg-surface rounded-2xl shadow-card border border-border;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-text-primary text-white text-sm font-medium
+           transition-all duration-150 hover:bg-accent-hover active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-transparent text-text-primary text-sm font-medium
+           border border-border transition-all duration-150 hover:bg-surface-secondary active:scale-95;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-danger text-white text-sm font-medium
+           transition-all duration-150 hover:bg-red-700 active:scale-95;
+  }
+
+  .input {
+    @apply w-full px-3.5 py-2.5 rounded-xl border border-border bg-surface text-sm text-text-primary
+           placeholder:text-text-disabled focus:outline-none focus:ring-2 focus:ring-text-primary/10 focus:border-text-secondary
+           transition-all duration-150;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-text-secondary mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-credit {
+    @apply badge bg-success-light text-success;
+  }
+
+  .badge-debit {
+    @apply badge bg-danger-light text-danger;
+  }
+
+  .badge-transfer {
+    @apply badge bg-info-light text-info;
+  }
+
+  .stat-card {
+    @apply card p-5 flex flex-col gap-1;
+  }
+}
